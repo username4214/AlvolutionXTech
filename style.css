@@ -23,7 +23,7 @@
   --dl-size-size-xxlarge: 288px;
   --dl-size-size-maxwidth: 1400px;
   --dl-radius-radius-round: 50%;
-  --dl-color-custom-accent1: #191B5B;
+  --dl-color-custom-accent1: #0a0d44;
   --dl-space-space-halfunit: 8px;
   --dl-space-space-sixunits: 96px;
   --dl-space-space-twounits: 32px;
@@ -40,11 +40,19 @@
   --dl-color-custom-neutral-light: #FFFFFF;
   --dl-space-space-oneandhalfunits: 24px;
 }
+.background {
+  position:  absolute;
+  display:  block;
+  top: 0;
+  left: 0;
+  z-index: 0;
+} 
 .buttonFilled {
   color: var(--dl-color-custom-neutral-dark);
   transition: 0.3s;
   font-family: Bricolage Grotesque;
   font-weight: bold;
+  z-index: 1;
   padding-top: var(--dl-space-space-halfunit);
   padding-left: var(--dl-space-space-oneandhalfunits);
   border-radius: 8px;
@@ -58,6 +66,7 @@
 .buttonFilledSecondary {
   color: var(--dl-color-custom-neutral-light);
   transition: 0.3s;
+  z-index: 1;
   font-family: Bricolage Grotesque;
   font-weight: bold;
   padding-top: var(--dl-space-space-halfunit);
@@ -74,6 +83,7 @@
 .buttonOutline {
   color: var(--dl-color-custom-neutral-dark);
   border: 1px solid;
+  z-index: 1;
   font-family: Bricolage Grotesque;
   font-weight: bold;
   padding-top: var(--dl-space-space-halfunit);
@@ -87,10 +97,36 @@
   color: var(--dl-color-custom-accent1);
   border-color: var(--dl-color-custom-accent1);
 }
+.buttonSocial {
+  color: var(--dl-color-custom-neutral-dark);
+  transition: 0.3s;
+  font-family: Bricolage Grotesque;
+  font-weight: bold;
+  z-index: 1;
+  padding-top: var(--dl-space-space-halfunit);
+  padding-left: var(--dl-space-space-oneandhalfunits);
+  border-radius: 8px;
+  padding-right: var(--dl-space-space-oneandhalfunits);
+  padding-bottom: var(--dl-space-space-halfunit);
+  background-color: var(--dl-color-custom-primary1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.buttonSocial svg {
+  fill: var(--dl-color-custom-neutral-dark);
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: var(--dl-space-space-halfunit);
+}
+.buttonSocial:hover {
+  background-color: var(--dl-color-custom-primary2);
+}
 .buttonFlat {
   color: var(--dl-color-custom-neutral-light);
   font-family: Bricolage Grotesque;
   font-weight: bold;
+  z-index: 1;
   padding-top: var(--dl-space-space-halfunit);
   padding-left: var(--dl-space-space-oneandhalfunits);
   padding-right: var(--dl-space-space-oneandhalfunits);
@@ -113,6 +149,7 @@
   color: var(--dl-color-custom-neutral-light);
   width: 100%;
   display: flex;
+  z-index: 1;
   padding: var(--dl-space-space-oneandhalfunits);
   align-items: flex-start;
   flex-direction: row;
@@ -123,6 +160,7 @@
   fill: var(--dl-color-custom-neutral-light);
   width: 2rem;
   height: 2rem;
+  z-index: 1;
   flex-shrink: 0;
   margin-right: var(--dl-space-space-oneandhalfunits);
 }
@@ -131,6 +169,7 @@
   color: var(--dl-color-custom-neutral-dark);
   width: 100%;
   display: flex;
+  z-index: 1;
   padding: var(--dl-space-space-twounits);
   max-width: 450px;
   min-height: 450px;
@@ -143,6 +182,7 @@
   color: var(--dl-color-custom-neutral-dark);
   width: 100%;
   display: flex;
+  z-index: 1;
   padding: var(--dl-space-space-twounits);
   max-width: 450px;
   min-height: 450px;
@@ -155,12 +195,13 @@
   color: var(--dl-color-custom-neutral-dark);
   width: 100%;
   display: flex;
+  z-index: 1;
   padding: var(--dl-space-space-twounits);
   max-width: 450px;
   min-height: 450px;
   align-items: flex-start;
   flex-direction: column;
-  background-color: var(--dl-color-custom-secondary1);
+  background-color: var(--dl-color-custom-neutral-light);
 }
 .faqContainer {
   flex: 0 0 auto;
@@ -183,11 +224,19 @@
   padding-right: var(--dl-space-space-threeunits);
   padding-bottom: var(--dl-space-space-oneandhalfunits);
   justify-content: space-between;
-  background-color: var(--dl-color-custom-neutral-dark);
 }
 .mobileMenu {
   color: var(--dl-color-custom-neutral-light);
   background-color: var(--dl-color-custom-neutral-dark);
+  animation: 0.3s ease 0s 1 normal none running slideIn;
+}
+@keyframes slideIn {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }
 .heroContainer {
   color: var(--dl-color-custom-neutral-light);
@@ -280,8 +329,10 @@
   padding: 0px 0px 0px 1.5rem;
   list-style-type: none;
   list-style-position: outside;
+  z-index: 1;
 }
 .list-item {
+  z-index: 1;
   display: list-item;
 }
 .teleport-show {
@@ -294,6 +345,7 @@
   font-family: Bricolage Grotesque;
   font-weight: 700;
   line-height: 150%;
+  z-index: 1;
 }
 .overline {
   font-size: 12px;
@@ -301,18 +353,21 @@
   font-weight: 700;
   line-height: 150%;
   text-transform: uppercase;
+  z-index: 1;
 }
 .bodySmall {
   font-size: 16px;
   font-family: Bricolage Grotesque;
   font-weight: 400;
   line-height: 150%;
+  z-index: 1;
 }
 .heading2 {
   font-size: 35px;
   font-family: Bricolage Grotesque;
   font-weight: 600;
   line-height: 150%;
+  z-index: 1;
 }
 .heading3 {
   font-size: 20px;
@@ -320,6 +375,7 @@
   font-family: Bricolage Grotesque;
   font-weight: 600;
   line-height: 150%;
+  z-index: 1;
 }
 .Heading {
   font-size: 32px;
@@ -328,6 +384,7 @@
   line-height: 1.15;
   text-transform: none;
   text-decoration: none;
+  z-index: 1;
 }
 .logo {
   font-size: 2em;
@@ -335,12 +392,14 @@
   font-weight: 700;
   line-height: 150%;
   text-transform: uppercase;
+  z-index: 1;
 }
 .bodyLarge {
   font-size: 18px;
   font-family: Bricolage Grotesque;
   font-weight: 400;
   line-height: 150%;
+  z-index: 1;
 }
 .Content {
   font-size: 16px;
@@ -349,4 +408,5 @@
   line-height: 1.15;
   text-transform: none;
   text-decoration: none;
+  z-index: 1;
 }
