@@ -291,7 +291,6 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  flex-direction: row-reverse;
 }
 .home-container06 {
   gap: var(--dl-space-space-oneandhalfunits);
