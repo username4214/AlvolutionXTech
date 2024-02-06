@@ -157,7 +157,7 @@ body {
   align-items: flex-start;
   flex-direction: column;
 }
-.home-links1 span {
+.home-links1 a {
   margin-bottom: var(--dl-space-space-twounits);
 }
 .home-nav1 {
